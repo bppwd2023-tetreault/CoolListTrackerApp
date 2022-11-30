@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @list %>
+<p> <strong> Items: </strong> </p>
+<ul>
+<% @list.items.each do |it| %>
+  <li> <%= it.name %> </li>
+<% end %> 
+</ul>
+<div>
+  <%= link_to "Edit this list", edit_list_path(@list), class: "btn btn-success mb-3" %> |
+  <%= link_to "Back to lists", lists_path, class: "btn btn-primary mb-3" %>
+
+  <%= button_to "Destroy this list", @list, method: :delete, class: "btn btn-danger" %>
+</div>
+
+<div class="mt-5">
+  <button class="btn btn-info">Share this button</button>
+</div>
