@@ -24,7 +24,7 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.archived = false
-    
+
     respond_to do |format|
       if @list.save
         format.html { redirect_to list_url(@list), notice: "List was successfully created." }
@@ -68,7 +68,10 @@ class ListsController < ApplicationController
     puts @list.archived
     puts "\n\n\n\n"
     redirect_to action: "show", id: @list.id 
-    
+  end
+
+  def archives # archive is the action to archive the list, archives is the action to view and manage the archived lists.
+    @arcLists = List.where(archived: true)
   end
 
   private

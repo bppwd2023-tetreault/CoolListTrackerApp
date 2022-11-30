@@ -1,0 +1,24 @@
+<h1>Archived Lists</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">List Name</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Unarchive</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @arcLists.each do |al| %>
+      <tr>
+        <td> <%= al.name %> </td>
+        <td> <button class="btn btn-danger">Delete list</button> </td>
+        <td> <button class="btn btn-warning">Unarchive list</button> </td> <%# replace these buttons with buttons that do stuff %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to "Back to lists", lists_path, class: "btn btn-primary" %>
+

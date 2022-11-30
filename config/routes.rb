@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :items
   get 'lists/archive'
+  get 'lists/archives' # not the same as 'lists/archive'
   resources :lists
   resources :students
   
