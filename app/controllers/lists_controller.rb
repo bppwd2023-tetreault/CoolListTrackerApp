@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: %i[ show edit update destroy ]
+  before_action :set_list, only: %i[ show edit update destroy archive ]
   before_action :authenticate_user!
 
   # GET /lists or /lists.json
@@ -23,7 +23,8 @@ class ListsController < ApplicationController
   # POST /lists or /lists.json
   def create
     @list = List.new(list_params)
-
+    @list.archived = false
+    
     respond_to do |format|
       if @list.save
         format.html { redirect_to list_url(@list), notice: "List was successfully created." }
@@ -58,6 +59,18 @@ class ListsController < ApplicationController
     end
   end
 
+  def archive
+    puts "\n\n\n\n"
+    puts params
+    puts "\n\n\n\n"
+    @list.archived = true
+    @list.save
+    puts @list.archived
+    puts "\n\n\n\n"
+    redirect_to action: "show", id: @list.id 
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
@@ -66,6 +79,6 @@ class ListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def list_params
-      params.require(:list).permit(:name, :list_type)
+      params.require(:list).permit(:name, :list_type, :user_id, :archived)
     end
 end

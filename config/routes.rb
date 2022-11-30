@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :items
+  get 'lists/archive'
   resources :lists
   resources :students
   

@@ -3,6 +3,8 @@ class CreateLists < ActiveRecord::Migration[7.0]
     create_table :lists do |t|
       t.string :name
       t.string :list_type
+      t.integer :user_id
+      t.boolean :archived
 
       t.timestamps
     end

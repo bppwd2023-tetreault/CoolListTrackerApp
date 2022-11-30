@@ -1,5 +1,10 @@
 <div id="<%= dom_id list %>">
   <p>
+    <strong>Created By: </strong>
+    <%= list.user.email %>
+  </p>
+  
+  <p>
     <strong>Name:</strong>
     <%= list.name %>
   </p>
@@ -7,6 +12,11 @@
   <p>
     <strong>List Type:</strong>
     <%= list.list_type %>
+  </p>
+
+  <p>
+    <strong>Is Archived: </strong>
+    <%= list.archived %>
   </p>
 
 </div>
