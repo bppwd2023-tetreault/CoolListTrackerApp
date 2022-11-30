@@ -11826,6 +11826,9 @@
   };
   enableDismissTrigger(Toast);
   defineJQueryPlugin(Toast);
+
+  // app/javascript/custom/custom_scripts.js
+  console.log("Page Loaded!");
 })();
 /*!
   * Bootstrap v5.2.3 (https://getbootstrap.com/)
