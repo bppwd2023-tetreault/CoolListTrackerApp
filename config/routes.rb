@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   resources :items
   resources :lists
   resources :students
+  
+  devise_scope :user do
+    # Redirects signing out users back to sign-in
+    get "users", to: "devise/sessions#new"
+  end
   devise_for :users
+  
   get 'pages/home'
   get 'user_management/index'
   get 'user_management/show'
