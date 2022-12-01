@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'groups/manage_group' # technically this is the page to manage the users in the group
+  get 'groups/add_user'
+  get 'groups/remove_user'
+  resources :groups
   resources :items
   get 'lists/archive'
   get 'lists/archives' # not the same as 'lists/archive'

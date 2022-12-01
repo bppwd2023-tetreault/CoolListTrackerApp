@@ -1,0 +1,31 @@
+<h1 class="text-center">Add to Group</h1>
+<h3 class="text-center">Group: <%= @group.name %> </h3>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |u| %>
+      <% if u != current_user %>
+        <tr>
+          <td> <%= u.name %> </td>
+          <td>
+           <%= link_to "Add to group", groups_add_user_path(id: u.id, gid: @group.id), class: "btn btn-info" %> 
+          </td>
+          <td>
+            <%= link_to "Remove from group", groups_remove_user_path(id: u.id, gid: @group.id), class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Back to group", group_path(id: @group.id), class: "btn btn-primary" %>
