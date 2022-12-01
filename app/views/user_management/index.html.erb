@@ -12,7 +12,7 @@
     <% @users.each do |u| %>
       <tr>
         <th scope="row"> <%= u.id %> </th>
-        <td> <%= u.name %> </td>
+        <td> <%= link_to u.name, user_management_show_path(id:u.id) %> </td>
         <td> <%= u.email %> </td>
       </tr>
     <% end %>
