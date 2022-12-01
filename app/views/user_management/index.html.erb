@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
+      <th scope="col">Name</th>
       <th scope="col">Email</th>
     </tr>
   </thead>
@@ -11,7 +12,8 @@
     <% @users.each do |u| %>
       <tr>
         <th scope="row"> <%= u.id %> </th>
-        <td><a href="mailto:<%= u.email %>"> <%= u.email %> </a> </td>
+        <td> <%= u.name %> </td>
+        <td> <%= u.email %> </td>
       </tr>
     <% end %>
   </tbody>
