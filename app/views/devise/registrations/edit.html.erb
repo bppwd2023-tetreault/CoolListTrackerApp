@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="mt-3">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -36,10 +36,17 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
-  <div class="actions">
+  <div class="field mb-5">
+    <%= f.label :avatar %> <i>(Profile pictures must not be larger than 100x100)</i> <br />
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="actions mb-4">
     <%= f.submit "Update" %>
   </div>
 <% end %>
+
+<hr>
 
 <h3>Cancel my account</h3>
 
