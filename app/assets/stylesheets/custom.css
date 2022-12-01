@@ -7,9 +7,15 @@ body {
   color: white;
 }
 
-#theUser {
+#theUser, a {
   color: white;
 }
+
+#theUser, a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 .list-name {
   float: inline-start;
   color: yellow;
