@@ -63,7 +63,11 @@ class ListsController < ApplicationController
     puts "\n\n\n\n"
     puts params
     puts "\n\n\n\n"
-    @list.archived = true
+    if @list.archived == false
+      @list.archived = true
+    elsif @list.archived == true
+      @list.archived = false
+    end 
     @list.save
     puts @list.archived
     puts "\n\n\n\n"

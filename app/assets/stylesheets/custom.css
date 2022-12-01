@@ -10,3 +10,7 @@ body {
 #theUser {
   color: white;
 }
+.list-name {
+  float: inline-start;
+  color: yellow;
+}

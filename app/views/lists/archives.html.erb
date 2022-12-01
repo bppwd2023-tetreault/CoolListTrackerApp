@@ -12,8 +12,8 @@
     <% @arcLists.each do |al| %>
       <tr>
         <td> <%= al.name %> </td>
-        <td> <button class="btn btn-danger">Delete list</button> </td>
-        <td> <button class="btn btn-warning">Unarchive list</button> </td> <%# replace these buttons with buttons that do stuff %>
+        <td> <%= button_to "Destroy this list", al, method: :delete, class: "btn btn-danger" %> </td>
+        <td> <%= link_to "Unarchive this list", lists_archive_path(id: al.id), class: "btn btn-warning" %> </td>
       </tr>
     <% end %>
   </tbody>
