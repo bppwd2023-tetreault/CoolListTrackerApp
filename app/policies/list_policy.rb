@@ -1,11 +1,14 @@
 class ListPolicy < ApplicationPolicy
 
+  # add group based access
+
+
   def index?
     true # they should ALWAYS be allowed to see everything
   end
 
   def show?
-    if(@user.id == @record.user_id) 
+    if(@user.id == @record.user_id or @record.group.users.include?(@user) if @record.group) # allow the user to see the list if they are part of the group that the list is a part of. Or if they created the list.
       return true
     else 
       return false
@@ -13,7 +16,7 @@ class ListPolicy < ApplicationPolicy
   end
   
   def create?
-    true
+    true 
   end
 
   def new?
@@ -30,6 +33,7 @@ class ListPolicy < ApplicationPolicy
 
   def destroy?
     false
+    # Only allow delete if the current user is the user that created the list
   end
 
 end

@@ -13,8 +13,10 @@
 </ul>
 <div>
   <%= link_to "Edit this list", edit_list_path(@list), class: "btn btn-success" %> |
-  <%= link_to "Back to lists", lists_path, class: "btn btn-primary" %> |
-  <%= link_to "Archive this list", lists_archive_path(id: @list), class: "btn btn-warning" %>
+  <%= link_to "Back to lists", lists_path, class: "btn btn-primary" %>
+  <% if @list.user_id == current_user.id %>
+    | <%= link_to "Archive this list", lists_archive_path(id: @list), class: "btn btn-warning" %>
+  <% end %>
 </div>
 
 <div>

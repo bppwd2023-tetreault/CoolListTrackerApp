@@ -4,11 +4,17 @@
 
 <div>
   <%= link_to "Edit this group", edit_group_path(@group), class: "btn btn-warning" %> 
-  <%= link_to "Back to groups", groups_path, class: "btn btn-primary" %>
   <%= link_to "New list", new_list_path(id: @group.id), class: "btn btn-success" %>
   <%= button_to "Destroy this group", @group, method: :delete, class: "btn btn-danger"%>
 </div>
 
-<div class="mt-5">
+<div class="mt-4">
   <%= link_to "Manage group", groups_manage_group_path(id: @group.id), class: "btn btn-info" %>
+  
 </div>
+
+<div class="mt-5">
+  <%= link_to "Back to groups", groups_path, class: "btn btn-primary" %>
+</div>
+
+

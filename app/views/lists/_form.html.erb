@@ -24,6 +24,11 @@
     <%= form.label :list_type, style: "display: block" %>
     <%= form.text_field :list_type, class: "mb-3" %>
   </div>
+
+  <div>
+    <%= form.label :group_id, style: "display: block" %>
+    <%= form.select :group_id, options_from_collection_for_select(Group.all, 'id', 'name'), {:include_blank => true}, class: "mb-3" %>
+  </div>
   
   <div>
     <%= form.submit @button_text, class: "btn btn-success" %>

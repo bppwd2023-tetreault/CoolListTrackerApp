@@ -58,23 +58,19 @@ class GroupsController < ApplicationController
     end
   end
 
-  def manage_group
+  def manage_group # shows all the users and allows the current user to either remove or add another user to the group
     @users = User.all
   end
 
-  def add_user # adding the user to the group
+  def manage_group_users # adding the user to the group
     @user = User.find(params[:id])
     groupID = params[:gid]
     @group = Group.find(groupID)
-    @group.users << @user
-    redirect_to action: show, id: @group.id
-  end
-
-  def remove_user
-    @user = User.find(params[:id])
-    groupID = params[:gid]
-    @group = Group.find(groupID)
-    @group.users.delete(@user)
+    if(!@group.users.include?(@user))
+      @group.users << @user
+    else 
+      @group.users.delete(@user)
+    end
     redirect_to action: show, id: @group.id
   end
 

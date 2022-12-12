@@ -19,4 +19,11 @@
     <%= list.archived %>
   </p>
 
+  <p>
+    <strong>Group: </strong>
+    <% if list.group %>  
+      <%= list.group.name %>
+    <% end %>
+  </p>
+
 </div>

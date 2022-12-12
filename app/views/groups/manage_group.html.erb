@@ -17,10 +17,7 @@
         <tr>
           <td> <%= u.name %> </td>
           <td>
-           <%= link_to "Add to group", groups_add_user_path(id: u.id, gid: @group.id), class: "btn btn-info" %> 
-          </td>
-          <td>
-            <%= link_to "Remove from group", groups_remove_user_path(id: u.id, gid: @group.id), class: "btn btn-danger" %>
+           <%= link_to "Manage user", groups_manage_group_users_path(id: u.id, gid: @group.id), class: "btn btn-info" %> 
           </td>
         </tr>
       <% end %>
