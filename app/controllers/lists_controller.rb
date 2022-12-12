@@ -5,15 +5,20 @@ class ListsController < ApplicationController
   # GET /lists or /lists.json
   def index
     @lists = List.all
+    authorize @lists
   end
 
   # GET /lists/1 or /lists/1.json
   def show
+    authorize @list
   end
 
   # GET /lists/new
   def new
     @list = List.new
+    if @group
+      @group = Group.find(params[:id]) # id is the group id, not list id
+    end
   end
 
   # GET /lists/1/edit

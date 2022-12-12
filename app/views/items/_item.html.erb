@@ -19,4 +19,9 @@
     <%= item.list.name %>
   </p>
 
+  <p>
+    <strong>Past due: </strong>
+    <%= item.deadline < DateTime.now %>
+  </p>
+
 </div>

@@ -5,6 +5,7 @@ class CreateLists < ActiveRecord::Migration[7.0]
       t.string :list_type
       t.integer :user_id
       t.boolean :archived
+      t.integer :group_id, optional: true
 
       t.timestamps
     end

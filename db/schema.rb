@@ -67,6 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_181609) do
     t.string "list_type"
     t.integer "user_id"
     t.boolean "archived"
+    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

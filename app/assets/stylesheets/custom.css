@@ -20,3 +20,8 @@ body {
   float: inline-start;
   color: yellow;
 }
+
+.pastDue a {
+  color: red;
+}
+
