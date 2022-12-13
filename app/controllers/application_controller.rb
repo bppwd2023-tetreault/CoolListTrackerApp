@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :approaching_items
   before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit::Authorization 
 
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def approaching_items
+    @apr_items = Item.where(deadline<DateTime.now+10.days)
+  end
 
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
