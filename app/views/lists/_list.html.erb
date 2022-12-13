@@ -1,13 +1,16 @@
 <div id="<%= dom_id list %>">
+
+  <p class="list-name">
+    <strong>Name:</strong>
+    <%= list.name %>
+  </p>
+
   <p>
     <strong>Created By: </strong>
     <%= list.user.email %>
   </p>
   
-  <p class="list-name">
-    <strong>Name:</strong>
-    <%= list.name %>
-  </p>
+  
 
   <p>
     <strong>List Type:</strong>
@@ -22,7 +25,7 @@
   <p>
     <strong>Group: </strong>
     <% if list.group %>  
-      <%= list.group.name %>
+      <%= link_to list.group.name, group_path(id: list.group.id) %>
     <% end %>
   </p>
 

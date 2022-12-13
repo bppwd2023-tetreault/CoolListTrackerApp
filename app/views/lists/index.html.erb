@@ -1,23 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<div class="text-center">
+  <p style="color: green"><%= notice %></p>
 
-<h1>Lists</h1>
+  <h1>Lists</h1>
 
-<div id="lists">
-  <% @lists.each do |list| %>
-    <% if !list.archived %>
-      <%= render list %>
-      <p>
-        <%= link_to "Show this list", list, class: "btn btn-primary mb-3" %>
-      </p>
+  <div id="lists">
+    <% @lists.each do |list| %>
+      <% if !list.archived %>
+        <%= render list %>
+        <p>
+          <%= link_to "Show this list", list, class: "btn btn-primary mb-3" %>
+        </p>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+  <%= link_to "New list", new_list_path, class: "btn btn-success" %>
+
+  <div class="mt-5 mb-4">
+    <%= link_to "View archived lists", lists_archives_path, class: "btn btn-warning" %>
+  </div>
 </div>
-
-<%= link_to "New list", new_list_path, class: "btn btn-success" %>
-
-<div class="mt-5 mb-4">
-  <%= link_to "View archived lists", lists_archives_path, class: "btn btn-warning" %>
-</div>
-
 
 

@@ -24,4 +24,13 @@
     <%= item.deadline < DateTime.now %>
   </p>
 
+  <div class="mb-4">
+    <% if item.picture.attached? %>
+      <%= image_tag(item.picture, size: '100')%>
+    <% else %>
+      <p> No picture </p>
+    <% end %>
+  </div>
+  
+
 </div>

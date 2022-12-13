@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :approaching_items
+  before_action :sidebar_stuff
   before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit::Authorization 
 
@@ -17,8 +17,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def approaching_items
-    @apr_items = Item.where(deadline<DateTime.now+10.days)
+  def sidebar_stuff
+    @past_items = Item.past_due
+    @apr_items = Item.approaching_end
   end
 
   def user_not_authorized

@@ -1,0 +1,13 @@
+<div data-controller="test">
+  <h1 class="text-center">Stimulus JS Testing</h1>
+  <div class="text-center"> 
+    <%= text_area_tag :words, "", data: {"test-target": "words"} %> 
+    <%= submit_tag "Click", data: {action: "click->test#greet"} %>
+    <button data-action="click->test#clear" class="btn btn-warning">Clear</button>
+  </div>
+  <div id="output" data-test-target="output">
+
+  </div>
+</div>
+
+<%# data-test-target="output" %>

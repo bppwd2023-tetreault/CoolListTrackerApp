@@ -1,12 +1,17 @@
 (() => {
   var __defProp = Object.defineProperty;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
   var __esm = (fn2, res) => function __init() {
     return fn2 && (res = (0, fn2[__getOwnPropNames(fn2)[0]])(fn2 = 0)), res;
   };
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __publicField = (obj, key, value) => {
+    __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+    return value;
   };
 
   // node_modules/@rails/actioncable/src/adapters.js
@@ -6645,8 +6650,20 @@
     }
   };
 
+  // app/javascript/controllers/test_controller.js
+  var test_controller_default = class extends Controller {
+    greet() {
+      this.outputTarget.innerHTML += `<p> ${this.wordsTarget.value}</p>`;
+    }
+    clear() {
+      this.outputTarget.innerHTML = "";
+    }
+  };
+  __publicField(test_controller_default, "targets", ["words", "output"]);
+
   // app/javascript/controllers/index.js
   application.register("hello", hello_controller_default);
+  application.register("test", test_controller_default);
 
   // node_modules/@popperjs/core/lib/index.js
   var lib_exports = {};

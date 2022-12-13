@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   get 'pages/home'
+  get 'pages/practice'
   get 'user_management/index'
   get 'user_management/show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
