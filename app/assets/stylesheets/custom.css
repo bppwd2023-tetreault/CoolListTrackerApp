@@ -32,9 +32,25 @@ body {
 
 .sidebar {
   border: 3px solid white;
-  background-color:black; /* rgb(90,90,90); */
+  background-color:rgb(40, 40, 40); /* rgb(90,90,90); */
 }
 
 .fixList {
   list-style-position: inside;
+}
+
+.pLevel4 {
+
+}
+
+.pLevel3 {
+
+}
+
+.pLevel2 {
+
+}
+
+.pLevel1 {
+  
 }

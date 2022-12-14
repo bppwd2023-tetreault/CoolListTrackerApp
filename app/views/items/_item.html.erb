@@ -15,6 +15,13 @@
   </p>
 
   <p>
+    <strong>Priority level: </strong>
+    <% if item.priority_level == 4 %>
+      <p> <%= item.priority_level </p>
+    <%= item.priority_level %>
+  </p>
+
+  <p>
     <strong>List:</strong>
     <%= item.list.name %>
   </p>

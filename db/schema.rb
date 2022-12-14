@@ -57,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_181609) do
     t.string "name"
     t.text "description"
     t.datetime "deadline"
+    t.integer "priority_level"
     t.integer "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
