@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import TestController from "./test_controller"
 application.register("test", TestController)
+
+import GroupsController from "./groups_controller"
+application.register("groups", GroupsController)

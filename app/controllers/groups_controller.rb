@@ -63,15 +63,37 @@ class GroupsController < ApplicationController
   end
 
   def manage_group_users # adding the user to the group
-    @user = User.find(params[:id])
-    groupID = params[:gid]
-    @group = Group.find(groupID)
-    if(!@group.users.include?(@user))
-      @group.users << @user
-    else 
-      @group.users.delete(@user)
+    #@user = User.find(params[:id])
+    #groupID = params[:gid]
+    #@group = Group.find(groupID)
+    #if(!@group.users.include?(@user))
+    #  @group.users << @user
+    #else 
+    #  @group.users.delete(@user)
+    #end
+    #redirect_to action: show, id: @group.id
+    groupID = params[:theGroup]
+    userID = params[:uID]
+    checked = params[:isChecked]
+    user = User.find(userID)
+    group = Group.find(groupID)
+    
+    puts "\n\n\n\n\n #{params} \n\n\n\n\n" # use the #{} to insert ruby code/variables
+    #puts "User: #{userID}" 
+    if(checked == "true") # true is a string, not a boolean
+      puts "\n\n\n\n\n"
+      puts "Adding #{user.name} to #{group.name} group."
+      group.users << user
+      puts "Added #{user.name} to #{group.name} group."
+      puts "\n\n\n\n\n"
+    elsif checked == "false" # if the user unchecks the checkbox for a role
+      puts "\n\n\n\n\n"
+      puts "Removing #{user.name} from #{group.name} group."
+      group.users.delete(user) 
+      puts "Removed #{user.name} from #{group.name} group."
+      puts "\n\n\n\n\n"
     end
-    redirect_to action: show, id: @group.id
+    redirect_to action: show, id: group.id 
   end
 
   private
