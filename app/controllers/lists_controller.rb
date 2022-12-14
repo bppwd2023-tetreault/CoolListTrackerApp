@@ -29,6 +29,8 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.archived = false
+    authorize @list
+    
 
     respond_to do |format|
       if @list.save

@@ -8,7 +8,9 @@ class ListPolicy < ApplicationPolicy
   end
 
   def show?
-    if(@user.id == @record.user_id or @record.group.users.include?(@user) if @record.group) # allow the user to see the list if they are part of the group that the list is a part of. Or if they created the list.
+    if(@user.id == @record.user_id) # if the current user is the one who created the list
+      return true
+    elsif(@record.group.users.include?(@user) if @record.group) # allow the user to see the list if they are part of the group that the list is a part of. Or if they created the list.
       return true
     else 
       return false
