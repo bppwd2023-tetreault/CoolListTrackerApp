@@ -3,7 +3,7 @@
 
  
 
-<div data-controller="groups">
+<div data-controller="groups" class="text-center">
   <%= form_with url: groups_manage_group_users_path, method: :get, html: {id: "user_form"} do |form| %>
     <%= form.hidden_field :group, value: @group.id, data: {"groups-target": "group"} %>
     <% @users.each do |u| %>
@@ -12,9 +12,9 @@
       <% end %>
     <% end %>
   <% end %> 
+  <%= link_to "Back to group", group_path(id: @group.id), class: "btn btn-primary mt-4" %>
 </div>
 
 
  
 
-<%= link_to "Back to group", group_path(id: @group.id), class: "btn btn-primary" %>
