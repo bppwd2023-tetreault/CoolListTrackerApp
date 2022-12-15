@@ -22,7 +22,7 @@ body {
 }
 
 .pastDue a {
-  color: red;
+  color: rgb(255, 115, 21);
 }
 
 .almostPastDue {
@@ -54,11 +54,31 @@ body {
 }
 
 .pLevel2 {
-  background-color: orangered;
+  background-color: orange;
   color: black;
 }
 
 .pLevel1 {
   background-color: red;
   color: black;
+}
+
+.prLevel5 a {
+  color: grey;
+}
+
+.prLevel4 a {
+  color: aqua;
+}
+
+.prLevel3 a {
+  color: chartreuse;
+}
+
+.prLevel2 a {
+  color: orange;
+}
+
+.prLevel1 a {
+  color: red;
 }

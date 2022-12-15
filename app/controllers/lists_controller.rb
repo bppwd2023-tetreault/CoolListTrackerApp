@@ -4,8 +4,16 @@ class ListsController < ApplicationController
 
   # GET /lists or /lists.json
   def index
-    @lists = List.all
-    authorize @lists
+    @lists = List.where(user_id: current_user.id)
+    @lists += List.joins(group: [:users]).where('user_id' == current_user.id)
+    @lists = @lists.uniq
+    #puts "Lists: #{@lists}"
+    #@lists.concat(List.joins(group: [:users]).where('user_id' => current_user.id)) #List.where(user_id: current_user.id)
+    @lists.each do |l|
+      puts "Lists: #{l.name}"
+    end 
+
+    #authorize @lists
   end
 
   # GET /lists/1 or /lists/1.json
