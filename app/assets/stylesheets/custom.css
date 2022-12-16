@@ -82,3 +82,7 @@ body {
 .prLevel1 a {
   color: red;
 }
+
+.heading {
+  font-family: "Lucida Console", "Courier New", monospace;
+}

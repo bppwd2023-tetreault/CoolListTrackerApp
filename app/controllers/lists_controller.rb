@@ -12,7 +12,7 @@ class ListsController < ApplicationController
     @lists.each do |l|
       puts "Lists: #{l.name}"
     end 
-
+    @title = "Lists"
     #authorize @lists
   end
 

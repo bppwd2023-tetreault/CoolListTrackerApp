@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="text-center">
+  <p style="color: green"><%= notice %></p>
 
-<h1>Groups</h1>
+  <h1 class="text-center heading">Groups</h1>
+  <hr>
+  <div id="groups">
+    <% @groups.each do |group| %>
+      <%= render group %>
+      <p>
+        <%= link_to "Show this group", group, class: "btn btn-primary mb-3" %>
+      </p>
+    <% end %>
+  </div>
 
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group, class: "btn btn-primary mb-3" %>
-    </p>
-  <% end %>
+  <%= link_to "New group", new_group_path, class: "btn btn-success my-4" %>
 </div>
-
-<%= link_to "New group", new_group_path, class: "btn btn-success mt-4" %>

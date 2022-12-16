@@ -7,9 +7,7 @@
   <%= form_with url: groups_manage_group_users_path, method: :get, html: {id: "user_form"} do |form| %>
     <%= form.hidden_field :group, value: @group.id, data: {"groups-target": "group"} %>
     <% @users.each do |u| %>
-      <% if u != current_user %>
-        <div><%= form.check_box u.id, data: {action: "click->groups#manageUser", "groups-target": "user"}, checked: @group.users.include?(u), class: "checkboxes" %> <%= u.name %></div>
-      <% end %>
+      <div><%= form.check_box u.id, data: {action: "click->groups#manageUser", "groups-target": "user"}, checked: @group.users.include?(u), class: "checkboxes" %> <%= u.name %></div>
     <% end %>
   <% end %> 
   <%= link_to "Back to group", group_path(id: @group.id), class: "btn btn-primary mt-4" %>

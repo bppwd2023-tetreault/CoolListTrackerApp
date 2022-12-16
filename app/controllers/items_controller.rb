@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   # GET /items or /items.json
   def index
     @items = Item.all
+    @title = "Items"
   end
 
   # GET /items/1 or /items/1.json
@@ -14,10 +15,12 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @title = "New Item"
   end
 
   # GET /items/1/edit
   def edit
+    @title = "Editing Item"
   end
 
   # POST /items or /items.json
